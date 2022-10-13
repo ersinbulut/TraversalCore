@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concreate;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using System;
@@ -11,5 +12,10 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfSubAboutDal : GenericRepository<SubAbout>, ISubAboutDal
     {
+        public List<SubAbout> GetList()
+        {
+            using var c = new Context();
+            return c.SubAbouts.ToList();
+        }
     }
 }

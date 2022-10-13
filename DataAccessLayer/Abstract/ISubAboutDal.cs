@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface ISubAboutDal : IGenericDal<SubAbout>
     {
+        List<SubAbout> GetList();
     }
 }
